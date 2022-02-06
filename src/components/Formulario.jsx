@@ -13,8 +13,13 @@ const Formulario = () => {
 
     const { nombre, descripcion, estado, prioridad } = todo
 
-    const handleChange = e => {
-        
+    const handleChange = (e) => {
+        const {name, value, checked, type} = e.target
+
+        setTodo((old) => ({
+            ...old,
+            [name]:type === "checkbox" ? checked : value
+        }))
     }
 
     return (
