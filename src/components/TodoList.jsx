@@ -1,7 +1,9 @@
+import Formulario from "./Formulario";
+
 const TodoList = () => {
   return (
     <div>
-        <h2>sarasasarasa</h2>
+        <Formulario />
     </div>
     );
 };
