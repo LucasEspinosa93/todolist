@@ -9,7 +9,13 @@ const Formulario = () => {
         prioridad: false
     }
 
-    const [todo, setTodo] = useState(initialState)
+    const [todo, setTodo] = useState(initialState);
+
+    const { nombre, descripcion, estado, prioridad } = todo
+
+    const handleChange = e => {
+        
+    }
 
     return (
         <>
@@ -18,13 +24,22 @@ const Formulario = () => {
                 <input type="text"
                     className='form-control mb-2'
                     name="nombre"
-                    placeholder='Ingrese el nombre de su tarea' />
+                    placeholder='Ingrese el nombre de su tarea'
+                    value="nombre"
+                    onChange={handleChange}
+                    />
                 <textarea
                     className="form-control mb-2"
                     placeholder="Ingrese descripción"
                     name="descripcion"
+                    value="descripcion"
+                    onChange={handleChange}
                 />
-                <select name="estado" className='form-control mb-2'>
+                <select
+                name="estado"
+                className='form-control mb-2'
+                value="estado"
+                onChange={handleChange}>
                     <option value="pendiente">Pendiente</option>
                     <option value="completado">Completado</option>
                 </select>
@@ -34,8 +49,9 @@ const Formulario = () => {
                         className="form-check-input"
                         type="checkbox"
                         name="prioridad"
-                        checked=""
+                        checked={prioridad}
                         id="flexCheckDefault"
+                        onChange={handleChange}
                     />
                     <label
                         className="form-check-label"
