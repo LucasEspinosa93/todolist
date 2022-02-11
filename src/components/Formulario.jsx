@@ -13,6 +13,11 @@ const Formulario = () => {
 
     const { nombre, descripcion, estado, prioridad } = todo
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log(todo);
+    }
+
     const handleChange = (e) => {
         const {name, value, checked, type} = e.target
 
@@ -25,25 +30,25 @@ const Formulario = () => {
     return (
         <>
             <h3>Agregar TODO</h3>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input type="text"
                     className='form-control mb-2'
                     name="nombre"
                     placeholder='Ingrese el nombre de su tarea'
-                    value="nombre"
+                    value={nombre}
                     onChange={handleChange}
                     />
                 <textarea
                     className="form-control mb-2"
                     placeholder="Ingrese descripción"
                     name="descripcion"
-                    value="descripcion"
+                    value={descripcion}
                     onChange={handleChange}
                 />
                 <select
                 name="estado"
                 className='form-control mb-2'
-                value="estado"
+                value={estado}
                 onChange={handleChange}>
                     <option value="pendiente">Pendiente</option>
                     <option value="completado">Completado</option>
