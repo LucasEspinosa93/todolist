@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const Formulario = () => {
 
@@ -16,6 +17,9 @@ const Formulario = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(todo);
+        if(!nombre.trim()){
+            
+        }
     }
 
     const handleChange = (e) => {
