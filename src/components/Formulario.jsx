@@ -18,8 +18,12 @@ const Formulario = () => {
         e.preventDefault();
         console.log(todo);
         if(!nombre.trim()){
-            console.log('No coloque esto en blanco')
-            return
+            Swal.fire({
+                title: 'Error!',
+                text: 'No deje campos vacios',
+                icon: 'error'
+            })
+            return;
         }
         console.log(todo);
     }
