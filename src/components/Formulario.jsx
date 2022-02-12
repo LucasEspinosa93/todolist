@@ -16,17 +16,33 @@ const Formulario = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(todo);
         if(!nombre.trim()){
+            e.target[0].focus()
             Swal.fire({
                 title: 'Error!',
                 text: 'No deje campos vacios',
                 icon: 'error'
-            })
+            });
             return;
         }
+        if(!descripcion.trim()){
+            e.target[1].focus();
+            Swal.fire({
+                title: 'Error!',
+                text: 'No deje campos vacios',
+                icon: 'error'
+            });
+            return;
+        }
+
+            Swal.fire({
+                title: 'Éxito!',
+                text: 'Tarea agregada.',
+                icon: 'success',
+            });
+            
         console.log(todo);
-    }
+    };
 
     const handleChange = (e) => {
         const {name, value, checked, type} = e.target
