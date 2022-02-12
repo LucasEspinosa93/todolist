@@ -18,8 +18,10 @@ const Formulario = () => {
         e.preventDefault();
         console.log(todo);
         if(!nombre.trim()){
-            
+            console.log('No coloque esto en blanco')
+            return
         }
+        console.log(todo);
     }
 
     const handleChange = (e) => {
