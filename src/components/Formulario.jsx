@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { v4 as uuidv4 } from 'uuid';
 
-const Formulario = () => {
+const Formulario = ({agregarTodo}) => {
 
     const initialState = {
         nombre: '',
         descripcion: '',
         estado: 'pendiente',
-        prioridad: false
+        prioridad: false,
+        id: uuidv4,
     }
 
     const [todo, setTodo] = useState(initialState);
@@ -41,7 +43,14 @@ const Formulario = () => {
                 icon: 'success',
             });
             
-        console.log(todo);
+            agregarTodo({
+                nombre: nombre,
+                descripcion: descripcion,
+                estado: estado === 'pendiente' ? false : true,
+                prioridad: prioridad,
+            });
+
+            setTodo(initialState);
     };
 
     const handleChange = (e) => {
