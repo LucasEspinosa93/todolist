@@ -101,7 +101,7 @@ const Formulario = ({agregarTodo}) => {
                     <label
                         className="form-check-label"
                         htmlFor="flexCheckDefault">
-                        Default checkbox
+                        Prioritario
                     </label>
                 </div>
                 <button
