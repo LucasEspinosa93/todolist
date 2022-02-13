@@ -1,6 +1,6 @@
-const Todo = ({ todo }) => {
+const Todo = ({ todo, eliminarTodo }) => {
 
-    const {nombre, descripcion, estado, prioridad} = todo
+    const { id, nombre, descripcion, estado, prioridad } = todo
 
   return (
     <li className='list-group-item d-flex justify-content-between align-items-start'>
@@ -12,13 +12,10 @@ const Todo = ({ todo }) => {
             <p>{descripcion}</p>
 
             <div>
-              <button className="btn btn-danger me-2">Eliminar</button>
+              <button className="btn btn-danger me-2" onClick={() => eliminarTodo(id)}>Eliminar</button>
               <button className="btn btn-warning">Editar</button>
             </div>
-            
         </div>
-
-
         <span className='badge bg-primary rounded-pill'>
           {prioridad && 'Prioritario'}
         </span>
